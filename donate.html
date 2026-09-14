@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Support SneppX - sponsor tiers and checkout.">
+  <title>Support SneppX - Sponsorship &amp; Checkout</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header>
+    <h1 class="logo">SneppX</h1>
+    <p class="tagline">Support the open-core AI ecosystem.</p>
+    <nav>
+      <a href="index.html#products">Products</a>
+      <a href="donate.html">Donate</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="https://github.com/SneppX">GitHub Org</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="intro">
+      <h2>Why support SneppX</h2>
+      <p>Every contribution funds maintenance, security work (P1 auditing),
+      distributed-training development and free learning content. Sponsors and
+      licensees get priority issue support and roadmap votes.</p>
+    </section>
+
+    <section id="tiers" class="grid">
+      <article class="card">
+        <h3>Coffee</h3>
+        <p>$5 / month - keeps the CI and the coffee flowing. Name on the
+        sponsor page.</p>
+        <p class="tiers">Data tier | no support queue</p>
+        <button class="cta checkout" data-tier="coffee">Buy coffee</button>
+      </article>
+      <article class="card">
+        <h3>Supporter</h3>
+        <p>$20 / month - swag-free but well-fed maintainers. Early access to
+        monthly security advisories.</p>
+        <p class="tiers">Feature requests tracked</p>
+        <button class="cta checkout" data-tier="supporter">Become a supporter</button>
+      </article>
+      <article class="card">
+        <h3>License</h3>
+        <p>$99 / year - commercial license for sneppx-shield / sneppx-edge
+        quantization SDKs. Private Slack with the team.</p>
+        <p class="tiers">Commercial use allowed</p>
+        <button class="cta checkout" data-tier="license">Get a license</button>
+      </article>
+      <article class="card">
+        <h3>Enterprise</h3>
+        <p>Custom terms - on-site workshops, white-glove audits, roadmap
+        priority, SLA.</p>
+        <p class="tiers">Talk to us</p>
+        <a class="cta" href="https://github.com/SneppX/sneppx-audits/issues/new">Contact sales</a>
+      </article>
+    </section>
+
+    <section id="pay">
+      <h2>Checkout</h2>
+      <p>Payments are handled by Lemon Squeezy (cards, PayPal, iDeal, Klarna)
+      or GitHub Sponsors.</p>
+      <p id="checkout-note" class="tiers"></p>
+      <p><a class="cta" id="sponsor-link" href="https://github.com/sponsors/ammar49-cyber">Become a GitHub sponsor</a></p>
+    </section>
+
+    <section id="faq">
+      <h2>FAQ</h2>
+      <ul>
+        <li><strong>Who gets the money?</strong> Directly funds SneppX
+        maintainers and security audits.</li>
+        <li><strong>Can I sponsor a feature?</strong> Yes - open an issue in
+        the repo you care about and reference your tier.</li>
+        <li><strong>Refund policy?</strong> 14 days, no questions asked.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>Copyright (c) 2026 SneppX</footer>
+
+  <!--
+    Lemon Squeezy checkout. Set the store slug and buy button identifiers in
+    the CONFIG object below; buttons fall back to GitHub Sponsors until set.
+    Docs: https://docs.lemonsqueezy.com/help/checkout/buy-button
+  -->
+  <script>
+    const CONFIG = {
+      store: "",                              // e.g. "sneppx"
+      products: { coffee: "", supporter: "", license: "" } // e.g. a1b2c3d4
+    };
+    const gh = "https://github.com/sponsors/ammar49-cyber";
+    function tierUrl(tier) {
+      const id = CONFIG.products[tier];
+      if (CONFIG.store && id) {
+        return `https://${CONFIG.store}.lemonsqueezy.com/checkout/buy/${id}`;
+      }
+      return null;
+    }
+    document.querySelectorAll(".checkout").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const u = tierUrl(btn.dataset.tier);
+        window.location.href = u || gh;
+      });
+    });
+    const note = tierUrl("coffee")
+      ? "Card / PayPal checkout enabled. You will be redirected to Lemon Squeezy."
+      : "Lemon Squeezy checkout is not configured yet - buttons currently route to GitHub Sponsors.";
+    document.getElementById("checkout-note").textContent = note;
+  </script>
+</body>
+</html>
