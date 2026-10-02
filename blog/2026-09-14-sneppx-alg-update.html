@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>sneppx-alg v0.5 released - elementwise_affine support for LayerNorm</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <h1 class="logo">SneppX</h1>
+    <p class="tagline">The open-core AI ecosystem: secure, auditable, distributed.</p>
+    <nav>
+      <a href="index.html">← Back to Blog</a>
+      <a href="https://github.com/SneppX">GitHub Org</a>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <h1>sneppx-alg v0.5 released</h1>
+      <time>2026-09-14</time>
+      <p>Category: Core Library</p>
+
+      <h2>What's New</h2>
+      <ul>
+        <li><strong>elementwise_affine parameter</strong> added to LayerNorm - allows disabling weight and bias affine transformation</li>
+        <li><strong>verify_artifact()</strong> convenience function in signature.py - combined hash + Ed25519 signature check</li>
+        <li><strong>KMS control</strong> added to sneppx-audits - key rotation verification for compliance</li>
+        <li>Higher-order AD improvements for SmoothL1/Huber loss functions</li>
+        <li>Sparse tensor N-D support (generalized from 2-D only)</li>
+      </ul>
+
+      <h2>Technical Details</h2>
+      <pre><code class="language-python"># Example: LayerNorm with elementwise_affine=False
+ln = LayerNorm(normalized_shape=64, elementwise_affine=False)
+out = ln(input_tensor)  # No weight/bias applied</code></pre>
+
+      <h2>Upgrade Guide</h2>
+      <ol>
+        <li>Update LayerNorm constructor to include elementwise_affine parameter</li>
+        <li>Set elementwise_affine=False if you previously disabled affine transforms</li>
+        <li>Verify forward pass outputs match expected behavior</li>
+      </ol>
+
+      <footer>
+        <p>Published on <a href="blog.html">SneppX Blog</a> | <a href="https://github.com/SneppX/sneppx-alg">GitHub</a></p>
+      </footer>
+    </article>
+  </main>
+
+  <script src="../assets/script.js"></script>
+</body>
+</html>

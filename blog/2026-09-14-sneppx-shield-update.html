@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>sneppx-shield verify_batch() - multi-artifact signature verification</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <h1 class="logo">SneppX</h1>
+    <p class="tagline">The open-core AI ecosystem: secure, auditable, distributed.</p>
+    <nav>
+      <a href="index.html">← Back to Blog</a>
+      <a href="https://github.com/SneppX">GitHub Org</a>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <h1>sneppx-shield verify_batch()</h1>
+      <time>2026-09-14</time>
+      <p>Category: Security</p>
+
+      <h2>What's New</h2>
+      <ul>
+        <li><strong>verify_batch()</strong> function added to signature.py - batch Ed25519 signature verification</li>
+        <li>Accepts paths list, optional sig_paths (scalar or list), optional public_key (scalar or list)</li>
+        <li>Returns list of (ok: bool, detail: dict) tuples, one per artifact</li>
+        <li>Combines with verify_artifact() for single-artifact convenience</li>
+      </ul>
+
+      <h2>Usage Example</h2>
+      <pre><code class="language-python"># Verify multiple artifacts at once
+results = verify_batch([
+    "model1.pt",
+    "model2.pt",
+    "model3.pt"
+], sig_paths=["model1.sig", "model2.sig", "model3.sig"])
+
+for ok, detail in results:
+    if ok:
+        print(f"Verified: {detail.get('signer', 'unknown')}")
+    else:
+        print(f"Failed: {detail.get('error', 'unknown')}</code></pre>
+
+      <h2>Batch Verification Workflow</h2>
+      <ol>
+        <li>Collect all model artifacts and their signature files</li>
+        <li>Call verify_batch(paths, sig_paths) with matching lists</li>
+        <li>Process results - quarantine failed verifications</li>
+        <li>Generate compliance reports for passed verifications</li>
+      </ol>
+
+      <h2>API Reference</h2>
+      <pre><code class="language-python">def verify_batch(paths, sig_paths=None, public_key=None):
+    """Verify Ed25519 signatures for a batch of artifacts.
+
+    Returns list of (ok: bool, detail: dict) tuples, one per artifact.
+    sig_paths and public_key can be scalars (applied to all) or lists
+    matching the length of paths.
+    """
+    # ... (full implementation)</code></pre>
+
+      <footer>
+        <p>Published on <a href="blog.html">SneppX Blog</a> | <a href="https://github.com/SneppX/sneppx-shield">GitHub</a></p>
+      </footer>
+    </article>
+  </main>
+
+  <script src="../assets/script.js"></script>
+</body>
+</html>
