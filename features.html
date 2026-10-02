@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SneppX - Product Features">
+  <title>SneppX - Product Features</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header>
+    <h1 class="logo">SneppX</h1>
+    <p class="tagline">The open-core AI ecosystem: secure, auditable, distributed.</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="features.html">Features</a>
+      <a href="docs.html">Docs</a>
+      <a href="blog.html">Blog</a>
+      <a href="#sponsors">Sponsor</a>
+      <a href="donate.html">Donate</a>
+      <a href="https://github.com/SneppX">GitHub Org</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="features" class="grid">
+      <h2>Security Features</h2>
+      <article class="card">
+        <h3>Ed25519 Signatures</h3>
+        <p>RFC 8032 compliant Ed25519 signing and verification with embedded Python implementation. Supports keypair generation, seed-based public key derivation, batch verification, and artifact integrity checks with quarantine.</p>
+      </article>
+      <article class="card">
+        <h3>SBOM generation</h3>
+        <p>Software Bill of Materials generation with SHA256 hashes and file sizes. Compliance reporting against EU AI Act, ISO 42001, and NIST AI RMF controls.</p>
+      </article>
+      <article class="card">
+        <h3>Compliance Scoring</h3>
+        <p>Automated compliance matrix evaluation across 8 controls mapping to EU AI Act, ISO 42001, and NIST AI RMF. Markdown and JSON report generation with --strict mode.</p>
+      </article>
+      <article class="card">
+        <h3>KMS Key Rotation</h3>
+        <p>Key management control verifying kms_key_id presence and key rotation enablement. Multi-target evidence merging for audit scenarios.</p>
+      </article>
+    </section>
+
+    <section id="features-distributed" class="card">
+      <h2>Distributed Training Features</h2>
+      <ul>
+        <li>NCCL and Gloo backend support</li>
+        <li>torchrun-compatible launch command generation</li>
+        <li>ZeRO stage-1, stage-2, stage-3 all-gather support</li>
+        <li>Pipeline parallelism with stage scheduling</li>
+        <li>Elastic job status tracking and cancellation</li>
+        <li>Gradient communication primitives (all-reduce, broadcast, send/recv)</li>
+      </ul>
+    </section>
+
+    <section id="features-marketplace" class="card">
+      <h2>Model Marketplace Features</h2>
+      <ul>
+        <li>JSON-persisted signed model registry</li>
+        <li>Ed25519 signature verification on model artifacts</li>
+        <li>Digest integrity checks (SHA256)</li>
+        <li>Download functionality for registered artifacts</li>
+        <li>Filtered listing by tag</li>
+        <li>Commercial license acknowledgement</li>
+      </ul>
+    </section>
+
+    <section id="features-edge" class="card">
+      <h2>On-Device Inference Features</h2>
+      <ul>
+        <li>uint8 per-tensor quantization/dequantization</li>
+        <li>Threshold-based weight pruning</li>
+        <li>Requantization between schemes</li>
+        <li>Dequantization statistics (min/max/mean/std)</li>
+        <li>Quantized model save/load persistence</li>
+      </ul>
+    </section>
+
+    <section id="features-academy" class="card">
+      <h2>Academic Course Features</h2>
+      <ul>
+        <li>Module 01: Tensor Engine fundamentals</li>
+        <li>Module 02: Autograd & nn modules</li>
+        <li>Module 03: Distributed Training principles</li>
+        <li>Module 04: Security & Compliance</li>
+        <li>Quizzes with 8 questions per module</li>
+        <li>Optional certification paths</li>
+      </ul>
+    </section>
+
+    <section id="features-audit" class="card">
+      <h2>Audit & Compliance Features</h2>
+      <ul>
+        <li>DSX control: dataset documentation verification</li>
+        <li>VER control: model versioning checks</li>
+        <li>KMS control: key rotation verification</li>
+        <li>SEC control: secret pattern detection</li>
+        <li>SBM control: SBOM presence validation</li>
+        <li>TST control: test coverage verification</li>
+        <li>Merge evidence from multiple targets</li>
+        <li>Markdown and JSON report generation</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>Copyright (c) 2026 SneppX</footer>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>
