@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SneppX - Documentation Hub">
+  <title>SneppX - Documentation Hub</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header>
+    <h1 class="logo">SneppX</h1>
+    <p class="tagline">The open-core AI ecosystem: secure, auditable, distributed.</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="features.html">Features</a>
+      <a href="docs.html">Docs</a>
+      <a href="blog.html">Blog</a>
+      <a href="#sponsors">Sponsor</a>
+      <a href="donate.html">Donate</a>
+      <a href="https://github.com/SneppX">GitHub Org</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="docs" class="grid">
+      <h2>Documentation</h2>
+      <article class="card">
+        <h3>sneppx-alg</h3>
+        <ul>
+          <li><a href="https://github.com/SneppX/sneppx-alg/blob/main/AGENTS.md">AGENTS.md</a> - Agent guide and constraints</li>
+          <li><a href="https://github.com/SneppX/sneppx-alg/blob/main/tests/python/test_init.py">Init utilities</a> - Tensor initialization</li>
+          <li><a href="https://github.com/SneppX/sneppx-alg/blob/main/tests/python/test_autograd_correctness.py">Autograd correctness</a> - FD gradient suites</li>
+          <li><a href="https://github.com/SneppX/sneppx-alg/blob/main/tests/python/test_higher_order_ad.py">Higher-order AD</a> - Exact-reference Hessian suites</li>
+          <li><a href="https://github.com/SneppX/sneppx-alg/blob/main/tests/python/test_gap_fill.py">Gap fill</a> - Core DL API</li>
+          <li><a href="https://github.com/SneppX/sneppx-alg/blob/main/tests/python/test_functional_ns.py">Functional namespace</a> - F.* ops</li>
+          <li><a href="https://github.com/SneppX/sneppx-alg/blob/main/tests/python/test_norm.py">Norm</a> - Differentiable norms</li>
+          <li><a href="https://github.com/SneppX/sneppx-alg/blob/main/tests/python/test_sparse.py">Sparse tensors</a> - COO/CSR/CSC/BSR</li>
+          <li><a href="https://github.com/SneppX/sneppx-alg/blob/main/tests/python/test_state_dict.py">State dict</a> - Serialization hardening</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>sneppx-shield</h3>
+        <ul>
+          <li><a href="https://github.com/SneppX/sneppx-shield/blob/main/src/sneppx_shield/signature.py">Signature sign/verify</a> - Ed25519 sign/verify</li>
+          <li><a href="https://github.com/SneppX/sneppx-shield/blob/main/src/sneppx_shield/compliance.py">Compliance matrix</a> - 8-control matrix</li>
+          <li><a href="https://github.com/SneppX/sneppx-shield/blob/main/src/sneppx_shield/report.py">Reports</a> - Markdown/JSON reports</li>
+          <li><a href="https://github.com/SneppX/sneppx-shield/blob/main/src/sneppx_shield/artifact_integrity.py">Artifact integrity</a> - Ed25519 sign/verify/quarantine</li>
+          <li><a href="https://github.com/SneppX/sneppx-shield/blob/main/src/sneppx_shield/secrets_redact.py">Secrets redaction</a></li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>sneppx-audits</h3>
+        <ul>
+          <li><a href="https://github.com/SneppX/sneppx-audits/blob/main/src/sneppx_audits/engine.py">Audit engine</a> - VER/DSX/KMS controls</li>
+          <li><a href="https://github.com/SneppX/sneppx-audits/blob/main/src/sneppx_audits/engine.py">merge_evidence()</a> - Multi-target evidence</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>sneppx-forge</h3>
+        <ul>
+          <li><a href="https://github.com/SneppX/sneppx-forge/blob/main/src/sneppx_forge/registry.py">ModelRegistry</a> - Registration, download, listing</li>
+          <li><a href="https://github.com/SneppX/sneppx-forge/blob/main/src/sneppx_forge/signing.py">Signing</a> - Payload verification</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>sneppx-dist</h3>
+        <ul>
+          <li><a href="https://github.com/SneppX/sneppx-dist/blob/main/src/sneppx_dist/cluster.py">Cluster</a> - Init, validate, torchrun commands</li>
+          <li><a href="https://github.com/SneppX/sneppx-dist/blob/main/src/sneppx_dist/cluster.py">detect_backend()</a> - Backend detection</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>sneppx-edge</h3>
+        <ul>
+          <li><a href="https://github.com/SneppX/sneppx-edge/blob/main/src/sneppx_edge/model.py">QuantizedModel</a> - Quantization/dequantization/requantization</li>
+          <li><a href="https://github.com/SneppX/sneppx-edge/blob/main/src/sneppx_edge/model.py">dequantize_stats()</a> - Quantization analysis</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>sneppx-cloud</h3>
+        <ul>
+          <li><a href="https://github.com/SneppX/sneppx-cloud/blob/main/src/sneppx_cloud/manager.py">Manager</a> - Job submission, status, transition</li>
+          <li><a href="https://github.com/SneppX/sneppx-cloud/blob/main/src/sneppx_cloud/manager.py">list_by_status()</a> - Job filtering</li>
+          <li><a href="https://github.com/SneppX/sneppx-cloud/blob/main/src/sneppx_cloud/manager.py">submit_batch()</a> - Bulk job submission</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+
+  <footer>Copyright (c) 2026 SneppX</footer>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>
