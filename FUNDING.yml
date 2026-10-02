@@ -1,0 +1,51 @@
+# SneppX Funding Configuration
+
+# GitHub Sponsors integration
+github:
+  sponsorable_url: "https://github.com/sponsors/ammar49-cyber"
+  tier_labels:
+    - name: "coffee"
+      monthly_amount: 5
+      label: "Coffee ($5/mo)"
+    - name: "supporter"
+      monthly_amount: 25
+      label: "Supporter ($25/mo)"
+    - name: "license"
+      monthly_amount: 99
+      label: "License ($99/mo)"
+    - name: "enterprise"
+      monthly_amount: "custom"
+      label: "Enterprise (custom)"
+
+# Sponsor benefits tracking
+benefits:
+  coffee:
+    - Listed as supporter in org profile README
+  supporter:
+    - Priority answers on repo issues
+    - Name/brand in org profile README
+  license:
+    - Commercial-use license acknowledgement
+    - Quarterly office hours
+  enterprise:
+    - Priority support
+    - Private channels
+    - Sponsored features
+    - Consulting for AI-security/distributed-training needs
+
+# Where the money goes
+usage:
+  - Maintenance of sneppx-alg (security fixes, audit follow-ups)
+  - Free sneppx-academy course content
+  - Compute for CI and releases
+
+# One-time / services
+services:
+  - AI framework security audit (see sneppx-audits)
+  - Feature sponsorship: "you pay, we implement it in the core"
+
+# Contact
+contact:
+  - Feature sponsorship / services: open an issue in the relevant repo
+  - Security audits: sneppx-audits
+  - Discussions: sneppx-alg discussions
